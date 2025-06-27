@@ -15,7 +15,7 @@ type OrderState = {
   errorOrders: string;
 };
 
-const initialState: OrderState = {
+export const initialState: OrderState = {
   request: false,
   currentOrder: null,
   viewOrders: [],

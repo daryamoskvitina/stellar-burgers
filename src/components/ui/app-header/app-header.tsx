@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 
 export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => (
-  <header className={styles.header}>
+  <header className={styles.header} data-cy={'app-header'}>
     <nav className={`${styles.menu} p-4`}>
       <div className={styles.menu_part_left}>
         <>
@@ -50,7 +50,10 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => (
           }
         >
           <ProfileIcon type={'primary'} />
-          <p className='text text_type_main-default ml-2'>
+          <p
+            className='text text_type_main-default ml-2'
+            data-cy={'profile-link'}
+          >
             {userName || 'Личный кабинет'}
           </p>
         </NavLink>
