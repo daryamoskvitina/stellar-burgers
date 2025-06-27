@@ -24,7 +24,7 @@ export interface TAuthState {
   errorLogout: string;
 }
 
-const initialState: TAuthState = {
+export const initialState: TAuthState = {
   user: null,
   isAuthChecked: false,
   isAuthenticated: false,
@@ -161,7 +161,8 @@ export const authSlice = createSlice({
         state.loginUserRequest = false;
         state.user = null;
         state.isAuthenticated = false;
-        clearAuthInfo();
+        localStorage.clear();
+        deleteCookie('accessToken');
       })
       .addCase(logout.rejected, (state, action) => {
         state.loginUserRequest = false;
